@@ -75,6 +75,10 @@ public class SLL extends Main
             {
                 return null;
             }
+            ListNode temp=head;
+            head=head.next;
+            temp.next=null;
+            return temp;
 
         }
 
