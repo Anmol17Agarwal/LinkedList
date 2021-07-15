@@ -15,6 +15,8 @@ public class Main {
         third.next = fourth; //linking node using next
         sll.addFirst(5);
         sll.addLast(50);
+        sll.deleteFirst();
+
         sll.display();
         System.out.println();
         System.out.println("Length of LinkedList = "+sll.length());
