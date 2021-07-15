@@ -51,51 +51,51 @@ public class SLL extends Main
 
         public void addFirst(int val)
         {
-            ListNode newNode = new ListNode(val);
-            newNode.next=head;
-            head=newNode;
+            ListNode newNode = new ListNode(val);//create newNode and added value to it
+            newNode.next=head;//joined newnode with head
+            head=newNode;// newNode is updated to head
         }
 
         public  void addLast(int val)
         {
-            ListNode newNode = new ListNode(val);
-            if(head==null){
-                head=newNode;
+            ListNode newNode = new ListNode(val);//create newNode and added value to it
+            if(head==null){//if head is empty
+                head=newNode;//head will be newnode
             }
-            ListNode current = head;
-            while (current.next!=null){
-                current=current.next;
+            ListNode current = head;//create reference point
+            while (current.next!=null){//check if current.next is not equal to null
+                current=current.next;//update current with current.next
             }
-            current.next=newNode;
+            current.next=newNode;//when loop will terminate i.e at tail,join curent.next to newNode
         }
 
         public ListNode deleteFirst()
         {
-            if(head==null)
+            if(head==null)//if head is empty
             {
-                return null;
+                return null;//return head is empty
             }
-            ListNode temp=head;
-            head=head.next;
-            temp.next=null;
-            return temp;
+            ListNode temp=head;//create reference point
+            head=head.next;//update head with head.next
+            temp.next=null;//disjoin temp with head and assign value to null
+            return temp;// return linkedlist
         }
 
         public ListNode deleteLast()
         {
-            if(head==null || head.next==null)
+            if(head==null || head.next==null)//check if head is null and head.next is null
             {
-                return head;
+                return head;//return head after deleting head.next
             }
-            ListNode current = head;
-            ListNode previous = null;
-            while (current.next!=null)
+            ListNode current = head;//create reference point
+            ListNode previous = null;//create reference point
+            while (current.next!=null)//check if current.next is not equal to null
             {
-                previous=current;
-                current=current.next;
+                previous=current;//update previous to current
+                current=current.next;//update current with current.next
             }
-            previous.next=null;
-            return current;
+            previous.next=null;//disjoin previous from current and assign value to null
+            return current;//return linkedlist
         }
 
 

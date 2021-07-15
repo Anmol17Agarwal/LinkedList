@@ -16,7 +16,7 @@ public class Main {
         sll.addFirst(5);
         sll.addLast(50);
         sll.deleteFirst();
-
+        sll.deleteLast();
         sll.display();
         System.out.println();
         System.out.println("Length of LinkedList = "+sll.length());
