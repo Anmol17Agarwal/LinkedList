@@ -69,6 +69,15 @@ public class SLL extends Main
             current.next=newNode;
         }
 
+        public ListNode deleteFirst()
+        {
+            if(head==null)
+            {
+                return null;
+            }
+
+        }
+
 
     }
 
