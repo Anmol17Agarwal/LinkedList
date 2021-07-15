@@ -4,14 +4,15 @@ package SingleLinkedList;
 *Creating display method to print list.
 *inserting default value.
  */
-public class SLL
+public class SLL extends Main
 {
-    private ListNode head; //initializing head as first element of LinkedList
-    private static class ListNode //Define ListNode
+
+    protected ListNode head; //initializing head as first element of LinkedList
+    static class ListNode //Define ListNode
     {
 
-        private int data; //initialise data as int type
-        private ListNode next; // initialise next to linked with next node
+        protected int data; //initialise data as int type
+        protected ListNode next; // initialise next to linked with next node
 
         public ListNode(int data) //constructor of listNode taking integer value as data
         {
@@ -48,23 +49,27 @@ public class SLL
             return count;
         }
 
-        public static void main(String[] args)
+        public void addFirst(int val)
         {
-            SLL sll = new SLL(); // create object
-            ListNode first = new ListNode(10); // default value of first element
-            ListNode second = new ListNode(20); // default value of second element
-            ListNode third = new ListNode(30); // default value of third element
-            ListNode fourth = new ListNode(40); // default value of fourth element
-
-            sll.head = first; //storing first value as head
-            first.next = second; //linking node using next
-            second.next = third; //linking node using next
-            third.next = fourth; //linking node using next
-
-            sll.display();
-            System.out.println();
-            System.out.println("Length of LinkedList = "+sll.length());
+            ListNode newNode = new ListNode(val);
+            newNode.next=head;
+            head=newNode;
         }
+
+        public  void addLast(int val)
+        {
+            ListNode newNode = new ListNode(val);
+            if(head==null){
+                head=newNode;
+            }
+            ListNode current = head;
+            while (current.next!=null){
+                current=current.next;
+            }
+            current.next=newNode;
+        }
+
+
     }
 
 
