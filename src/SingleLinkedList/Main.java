@@ -17,8 +17,23 @@ public class Main {
         sll.addLast(50);
         sll.deleteFirst();
         sll.deleteLast();
+        sll.insertNode(1,5);
+        sll.insertNode(2,15);
         sll.display();
         System.out.println();
-        System.out.println("Length of LinkedList = "+sll.length());
+        sll.insertNode(7,70);
+        sll.display();
+        sll.deleteNode(5);
+
+        System.out.println();
+        sll.display();
+        if(sll.find(30))
+        {
+            System.out.println("Search key found");
+        }
+        else {
+            System.out.println("Search key is not found");
+        }
+    System.out.println("Length of LinkedList = "+sll.length());
     }
 }

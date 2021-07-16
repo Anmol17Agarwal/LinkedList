@@ -98,6 +98,63 @@ public class SLL extends Main
             return current;//return linkedlist
         }
 
+        public void insertNode(int position,int value)
+        {
+            ListNode node = new ListNode(value);
+            if(position==1)
+            {
+                node.next=head;
+                head=node;
+            }
+            else{
+                ListNode previous = head;
+                int count=1;
+                if(count<position-1)
+                {
+                    previous=previous.next;
+                    count++;
+                }
+                ListNode current=previous.next;
+                node.next=current;
+                previous.next=node;
+            }
+        }
+
+
+        public void deleteNode(int position)
+        {
+            if(position==1)
+            {
+                head=head.next;
+            }
+            else
+            {
+                ListNode previous=head;
+                int count=1;
+                while (count<position-1)
+                {
+                    previous=previous.next;
+                    count++;
+                }
+                ListNode current=previous.next;
+                previous.next=current.next;
+            }
+        }
+
+        public boolean find(int searchItem)
+        {
+            ListNode current=head;
+            while (current.next!=null)
+            {
+                if(current.data==searchItem)
+                {
+                    return true;
+                }
+                current=current.next;
+            }
+            return false;
+        }
+
 
     }
 
