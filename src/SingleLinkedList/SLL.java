@@ -100,59 +100,59 @@ public class SLL extends Main
 
         public void insertNode(int position,int value)
         {
-            ListNode node = new ListNode(value);
-            if(position==1)
+            ListNode node = new ListNode(value);//create node and store value assign to it
+            if(position==1)//check if position is one
             {
-                node.next=head;
-                head=node;
+                node.next=head;//add node to head
+                head=node;//shift head to first node
             }
             else{
-                ListNode previous = head;
-                int count=1;
-                if(count<position-1)
+                ListNode previous = head;//create reference node
+                int count=1;//declare and initialize count
+                if(count<position-1)//check condition
                 {
-                    previous=previous.next;
-                    count++;
+                    previous=previous.next;//update previous to previous.next
+                    count++;//increment count by 1
                 }
-                ListNode current=previous.next;
-                node.next=current;
-                previous.next=node;
+                ListNode current=previous.next;//create reference node as current
+                node.next=current;//linked node to current node
+                previous.next=node;//linked previous node to 'node'
             }
         }
 
 
         public void deleteNode(int position)
         {
-            if(position==1)
+            if(position==1)//check if position is 1
             {
-                head=head.next;
+                head=head.next;//remove head node and shift to next node
             }
             else
             {
-                ListNode previous=head;
-                int count=1;
-                while (count<position-1)
+                ListNode previous=head;//create reference node as previous
+                int count=1;//declare and initialize count to 1
+                while (count<position-1)//loop to check condition
                 {
-                    previous=previous.next;
-                    count++;
+                    previous=previous.next;//update previous to previous.next
+                    count++;//increment count by 1
                 }
-                ListNode current=previous.next;
-                previous.next=current.next;
+                ListNode current=previous.next;//create reference node as current and assign nod eof previous.next
+                previous.next=current.next;//linked previous node to current.next
             }
         }
 
         public boolean find(int searchItem)
         {
-            ListNode current=head;
-            while (current.next!=null)
+            ListNode current=head;//create reference node as current
+            while (current.next!=null)//loop to check current.next is not equal to null
             {
-                if(current.data==searchItem)
+                if(current.data==searchItem)//check the condition
                 {
-                    return true;
+                    return true;//if find return true
                 }
-                current=current.next;
+                current=current.next;//update current to current.next
             }
-            return false;
+            return false;//otherwise return false
         }
 
 
