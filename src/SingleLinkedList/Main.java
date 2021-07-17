@@ -14,6 +14,7 @@ public class Main {
         second.next = third; //linking node using next
         third.next = fourth; //linking node using next
         sll.addFirst(5);
+        sll.addLast(70);
         sll.addLast(50);
         sll.deleteFirst();
         sll.deleteLast();
@@ -37,6 +38,9 @@ public class Main {
         sll.head=sll.reverseList(sll.head);
         System.out.println("Reversed List = ");
         sll.display();
+
+        SLL.ListNode middleNode = sll.middleNode();
+        System.out.println("Middle Node"+ middleNode.data);
     System.out.println("Length of LinkedList = "+sll.length());
     }
 }
