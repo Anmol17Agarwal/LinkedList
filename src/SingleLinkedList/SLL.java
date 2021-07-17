@@ -155,6 +155,24 @@ public class SLL extends Main
             return false;//otherwise return false
         }
 
+        public ListNode reverseList(ListNode head) {
+            if (head == null) {
+                return head;
+            } else {
+                ListNode current = head;
+                ListNode previous = null;
+                ListNode next = null;
+                while (current != null) {
+                    next = current.next;
+                    current.next = previous;
+                    previous = current;
+                    current = next;
+                }
+                return previous;
+            }
+        }
+
+
 
     }
 

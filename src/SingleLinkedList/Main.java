@@ -34,6 +34,9 @@ public class Main {
         else {
             System.out.println("Search key is not found");
         }
+        sll.head=sll.reverseList(sll.head);
+        System.out.println("Reversed List = ");
+        sll.display();
     System.out.println("Length of LinkedList = "+sll.length());
     }
 }
