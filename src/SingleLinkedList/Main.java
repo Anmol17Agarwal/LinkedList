@@ -39,6 +39,8 @@ public class Main {
         System.out.println("Reversed List = ");
         sll.display();
 
+        SLL.ListNode nthNode=sll.nthNodeFromLast(2);
+        System.out.println(nthNode.data);
         SLL.ListNode middleNode = sll.middleNode();
         System.out.println("Middle Node"+ middleNode.data);
     System.out.println("Length of LinkedList = "+sll.length());
